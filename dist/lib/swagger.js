@@ -985,6 +985,10 @@ var SwaggerRequest = function(type, url, params, opts, successCallback, errorCal
   if (responseContentType)
     myHeaders["Accept"] = responseContentType;
 
+  myHeaders["Access-Control-Allow-Origin"] = "*";
+  //myHeaders["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS";
+  //myHeaders["Access-Control-Allow-Headers"] = "*";
+
   if (!((this.headers != null) && (this.headers.mock != null))) {
     obj = {
       url: this.url,

@@ -19,7 +19,7 @@
   <script type="text/javascript">
     $(function () {
       window.swaggerUi = new SwaggerUi({
-      url: "http://petstore.swagger.wordnik.com/api/api-docs",
+      url: "http://localhost:9000/api-docs",
       dom_id: "swagger-ui-container",
       supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
       onComplete: function(swaggerApi, swaggerUi){
@@ -31,6 +31,9 @@
       },
       docExpansion: "none"
     });
+
+window.authorizations.add("Accept", 
+    new ApiKeyAuthorization("Accept", "application/json", "header"));
 
     $('#input_apiKey').change(function() {
       var key = $('#input_apiKey')[0].value;
